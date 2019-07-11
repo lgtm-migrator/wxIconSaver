@@ -19,7 +19,7 @@ copyright   = """
 2019 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 modname            = "wxIconSaver"
 py_modules         = ['wxIconSaver']
