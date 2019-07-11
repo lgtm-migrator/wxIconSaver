@@ -15,16 +15,6 @@ from sphinx.locale import _
 from domdf_wxpython_tools import __author__, __version__, __copyright__
 from __pkginfo__ import github_username, modname
 
-import os
-import shutil
-if os.path.exists("../wx"):
-    shutil.rmtree("../wx")
-
-os.mkdir("../wx")
-
-import wget
-wget.download("https://raw.githubusercontent.com/domdfcoding/dummy_wx/master/wx/__init__.py", "../wx/__init__.py")
-
 github_url = f"https://github.com/{github_username}/{modname}"
 
 rst_prolog = f""".. |pkgname| replace:: {modname}

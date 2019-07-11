@@ -1,3 +1,4 @@
 sphinxcontrib-httpdomain
 sphinx
 domdf_wxpython_tools>=0.1.15
+dummy_wx
