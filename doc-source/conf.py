@@ -1,22 +1,40 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import sys
+#### No need to change anything in this file ####
+
 import os
 import re
+import sys
 
 sys.path.append(os.path.abspath('.'))
 sys.path.append(os.path.abspath('..'))
-sys.path.append(os.path.abspath('./demo/'))
 
 from sphinx.locale import _
 
+from domdf_wxpython_tools import __author__, __version__, __copyright__
+from __pkginfo__ import github_username, modname
 
-project = "wxIconSaver"
-from wxIconSaver import __author__, __version__, __copyright__
+import os
+import shutil
+if os.path.exists("../wx"):
+    shutil.rmtree("../wx")
 
+os.mkdir("../wx")
 
-slug = re.sub(r'\W+', '-', project.lower())
+import wget
+wget.download("https://raw.githubusercontent.com/domdfcoding/dummy_wx/master/wx/__init__.py", "../wx/__init__.py")
+
+github_url = f"https://github.com/{github_username}/{modname}"
+
+rst_prolog = f""".. |pkgname| replace:: {modname}
+.. |pkgname2| replace:: ``{modname}``
+.. |browse_github| replace:: `Browse the GitHub Repository <{github_url}>`__
+.. |ghurl| replace:: {github_url}
+"""
+
+project = modname
+slug = re.sub(r'\W+', '-', modname.lower())
 version = __version__
 release = __version__
 author = __author__

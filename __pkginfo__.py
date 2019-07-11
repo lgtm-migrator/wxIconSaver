@@ -19,6 +19,19 @@ copyright   = """
 2019 Dominic Davis-Foster <dominic@davis-foster.co.uk>
 """
 
+VERSION = "0.1.1"
+
+modname            = "wxIconSaver"
+py_modules         = ['wxIconSaver']
+entry_points       = {
+	'console_scripts': [
+		'wxIconSaver=wxIconSaver:main',
+	]}
+
+license            = 'GPL3'
+
+short_desc         = 'wxPython GUI for saving icons to files'
+
 classifiers =  ['Development Status :: 3 - Alpha',
 				'Intended Audience :: Developers',
 				'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -31,21 +44,12 @@ classifiers =  ['Development Status :: 3 - Alpha',
 
 # TODO: add tag for GUI
 
-# The rest in alphabetic order
 author             = "Dominic Davis-Foster"
 author_email       = "dominic@davis-foster.co.uk"
-entry_points       = {
-	'console_scripts': [
-		'wxIconSaver=wxIconSaver:main',
-	]}
-ftp_url            = None
-install_requires   = []
+github_username	   = "domdfcoding"
+web                = github_url = f"https://github.com/{github_username}/{modname}"
 
-license            = 'GPL3'
-modname            = "wxIconSaver"
-py_modules         = ['wxIconSaver']
-short_desc         = 'wxPython GUI for saving icons to files'
-web                = 'https://github.com/domdfcoding/wxIconSaver'
+install_requires   = []
 
 
 import os.path
@@ -58,6 +62,5 @@ srcdir = get_srcdir()
 def read(*rnames):
 	return open(os.path.join(srcdir, *rnames)).read()
 
-# Get info from files; set: long_description and VERSION
+# Get info from files; set: long_description
 long_description   = ( read("README.rst") + '\n' )
-exec(read('version.py'))

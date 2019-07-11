@@ -1,8 +1,5 @@
 #!/usr/bin/env python
-import sys
-
-"""Setup script for wxIconSaver"""
-
+"""Setup script"""
 
 from __pkginfo__ import \
     author,           author_email,       install_requires,          \
