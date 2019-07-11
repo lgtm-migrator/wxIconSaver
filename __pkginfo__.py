@@ -49,7 +49,7 @@ author_email       = "dominic@davis-foster.co.uk"
 github_username	   = "domdfcoding"
 web                = github_url = f"https://github.com/{github_username}/{modname}"
 
-install_requires   = []
+install_requires   = ["domdf_wxpython_tools>=0.1.15"]
 
 
 import os.path
