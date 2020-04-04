@@ -12,7 +12,7 @@ sys.path.append(os.path.abspath('..'))
 
 from sphinx.locale import _
 
-from domdf_wxpython_tools import __author__, __version__, __copyright__
+from wxIconSaver import __author__, __version__, __copyright__
 from __pkginfo__ import github_username, modname
 
 github_url = f"https://github.com/{github_username}/{modname}"
