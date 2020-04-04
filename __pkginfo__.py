@@ -36,15 +36,16 @@ license = 'GPL3'
 
 short_desc = 'wxPython GUI for saving icons to files'
 
-classifiers = ['Development Status :: 3 - Alpha',
-			   'Intended Audience :: Developers',
-			   'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-			   'Operating System :: OS Independent',
-			   'Programming Language :: Python',
-			   'Programming Language :: Python :: 3.6',
-			   'Programming Language :: Python :: 3.7',
-			   'Programming Language :: Python :: 3.8',
-			   ]
+classifiers = [
+		'Development Status :: 3 - Alpha',
+		'Intended Audience :: Developers',
+		'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+		'Operating System :: OS Independent',
+		'Programming Language :: Python',
+		'Programming Language :: Python :: 3.6',
+		'Programming Language :: Python :: 3.7',
+		'Programming Language :: Python :: 3.8',
+		]
 
 # TODO: add tag for GUI
 
