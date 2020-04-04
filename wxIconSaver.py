@@ -28,15 +28,18 @@ wxPython GUI for saving icons to files
 
 
 __author__ = "Dominic Davis-Foster"
-__copyright__ = "2019 Dominic Davis-Foster"
+__copyright__ = "2019-2020 Dominic Davis-Foster"
 
 __license__ = "GPL"
 __version__ = "0.1.5"
 __email__ = "dominic@davis-foster.co.uk"
 
-
-import wx
+# stdlib
 import os
+
+# 3rd party
+import wx
+
 
 # begin wxGlade: dependencies
 # end wxGlade
@@ -51,19 +54,19 @@ class BitmapSaverFrame(wx.Frame):
 		kwds["style"] = kwds.get("style", 0) | wx.CAPTION | wx.CLIP_CHILDREN | wx.CLOSE_BOX | wx.MINIMIZE_BOX | wx.SYSTEM_MENU
 		wx.Frame.__init__(self, *args, **kwds)
 		self.SetSize((467, 577))
-		self.SetMinSize((467,577))
-		self.SetMaxSize((467,577))
-		self.SetSize((467,577))
+		self.SetMinSize((467, 577))
+		self.SetMaxSize((467, 577))
+		self.SetSize((467, 577))
 		self.size_spin_ctrl = wx.SpinCtrl(self, wx.ID_ANY, "16", min=1, max=512)
 		self.icon_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
 		self.provider_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
 		self.filetype_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
 		self.close_button = wx.Button(self, wx.ID_ANY, "Close")
 		self.save_button = wx.Button(self, wx.ID_ANY, "Save")
-
+		
 		self.__set_properties()
 		self.__do_layout()
-
+		
 		self.Bind(wx.EVT_LISTBOX, self.update_preview, self.icon_list_box)
 		self.Bind(wx.EVT_LISTBOX, self.update_preview, self.provider_list_box)
 		self.Bind(wx.EVT_LISTBOX, self.update_preview, self.filetype_list_box)
@@ -75,114 +78,124 @@ class BitmapSaverFrame(wx.Frame):
 		self.size_spin_ctrl.SetValue("16")
 		self.size_spin_ctrl.SetMin(1)
 		self.size_spin_ctrl.SetMax(512)
-		#style=wx.TE_NO_VSCROLL | wx.TE_PROCESS_ENTER)
-
-		#self.FilePicker = wx.FilePickerCtrl(self, wx.ID_ANY, style=wx.FLP_SAVE, message="Choose where to save the imageFileSelectorPromptStr")
-
+		# style=wx.TE_NO_VSCROLL | wx.TE_PROCESS_ENTER)
+		
+		# self.FilePicker = wx.FilePickerCtrl(
+		# 		self, wx.ID_ANY, style=wx.FLP_SAVE,
+		# 		message="Choose where to save the imageFileSelectorPromptStr",
+		# 		)
+		
 		self.size = 16
 		self.icon = ''
 		self.provider = ''
 		self.filetype = ''
 		self.filename = ''
 		
-		
 		self.icon_list_box.Clear()
-		self.icon_list_box.AppendItems(["ART_ADD_BOOKMARK"
-								,"ART_CDROM"
-								,"ART_CLOSE"
-								,"ART_COPY"
-								,"ART_CROSS_MARK"
-								,"ART_CUT"
-								,"ART_DELETE"
-								,"ART_DEL_BOOKMARK"
-								,"ART_ERROR"
-								,"ART_EXECUTABLE_FILE"
-								,"ART_FILE_OPEN"
-								,"ART_FILE_SAVE"
-								,"ART_FILE_SAVE_AS"
-								,"ART_FIND"
-								,"ART_FIND_AND_REPLACE"
-								,"ART_FLOPPY"
-								,"ART_FOLDER"
-								,"ART_FOLDER_OPEN"
-								,"ART_GOTO_FIRST"
-								,"ART_GOTO_LAST"
-								,"ART_GO_BACK"
-								,"ART_GO_DIR_UP"
-								,"ART_GO_DOWN"
-								,"ART_GO_FORWARD"
-								,"ART_GO_HOME"
-								,"ART_GO_TO_PARENT"
-								,"ART_GO_UP"
-								,"ART_HARDDISK"
-								,"ART_HELP"
-								,"ART_HELP_BOOK"
-								,"ART_HELP_FOLDER"
-								,"ART_HELP_PAGE"
-								,"ART_HELP_SETTINGS"
-								,"ART_HELP_SIDE_PANEL"
-								,"ART_INFORMATION"
-								,"ART_LIST_VIEW"
-								,"ART_MINUS"
-								,"ART_MISSING_IMAGE"
-								,"ART_NEW"
-								,"ART_NEW_DIR"
-								,"ART_NORMAL_FILE"
-								,"ART_PASTE"
-								,"ART_PLUS"
-								,"ART_PRINT"
-								,"ART_QUESTION"
-								,"ART_QUIT"
-								,"ART_REDO"
-								,"ART_REPORT_VIEW"
-								,"ART_TICK_MARK"
-								,"ART_TIP"
-								,"ART_UNDO"
-								,"ART_WARNING"
-								])
+		self.icon_list_box.AppendItems([
+				"ART_ADD_BOOKMARK",
+				"ART_CDROM",
+				"ART_CLOSE",
+				"ART_COPY",
+				"ART_CROSS_MARK",
+				"ART_CUT",
+				"ART_DELETE",
+				"ART_DEL_BOOKMARK",
+				"ART_ERROR",
+				"ART_EXECUTABLE_FILE",
+				"ART_FILE_OPEN",
+				"ART_FILE_SAVE",
+				"ART_FILE_SAVE_AS",
+				"ART_FIND",
+				"ART_FIND_AND_REPLACE",
+				"ART_FLOPPY",
+				"ART_FOLDER",
+				"ART_FOLDER_OPEN",
+				"ART_GOTO_FIRST",
+				"ART_GOTO_LAST",
+				"ART_GO_BACK",
+				"ART_GO_DIR_UP",
+				"ART_GO_DOWN",
+				"ART_GO_FORWARD",
+				"ART_GO_HOME",
+				"ART_GO_TO_PARENT",
+				"ART_GO_UP",
+				"ART_HARDDISK",
+				"ART_HELP",
+				"ART_HELP_BOOK",
+				"ART_HELP_FOLDER",
+				"ART_HELP_PAGE",
+				"ART_HELP_SETTINGS",
+				"ART_HELP_SIDE_PANEL",
+				"ART_INFORMATION",
+				"ART_LIST_VIEW",
+				"ART_MINUS",
+				"ART_MISSING_IMAGE",
+				"ART_NEW",
+				"ART_NEW_DIR",
+				"ART_NORMAL_FILE",
+				"ART_PASTE",
+				"ART_PLUS",
+				"ART_PRINT",
+				"ART_QUESTION",
+				"ART_QUIT",
+				"ART_REDO",
+				"ART_REPORT_VIEW",
+				"ART_TICK_MARK",
+				"ART_TIP",
+				"ART_UNDO",
+				"ART_WARNING"
+				])
+		
 		self.icon_list_box.SetSelection(0)
 		self.provider_list_box.Clear()
-		self.provider_list_box.AppendItems(["ART_TOOLBAR"
-								 ,"ART_MENU"
-								 ,"ART_BUTTON"
-								 ,"ART_FRAME_ICON"
-								 ,"ART_CMN_DIALOG"
-								 ,"ART_HELP_BROWSER"
-								 ,"ART_MESSAGE_BOX"
-								 ,"ART_OTHER"])
+		self.provider_list_box.AppendItems([
+				"ART_TOOLBAR",
+				"ART_MENU",
+				"ART_BUTTON",
+				"ART_FRAME_ICON",
+				"ART_CMN_DIALOG",
+				"ART_HELP_BROWSER",
+				"ART_MESSAGE_BOX",
+				"ART_OTHER",
+				])
+		
 		self.provider_list_box.SetSelection(0)
 		self.filetype_list_box.Clear()
-		self.filetype_list_box.AppendItems(["BITMAP_TYPE_BMP" # 1 	 
-								,"BITMAP_TYPE_ICO" 	# 3 
-								,"BITMAP_TYPE_CUR" 	 #5
-								,"BITMAP_TYPE_XBM" 	 #7
-								,"BITMAP_TYPE_XBM_DATA" #8
-								,"wx.BITMAP_TYPE_XPM" 	 #9
-								,"wx.BITMAP_TYPE_XPM_DATA" #10
-								,"BITMAP_TYPE_TIFF" #11	 
-								,"BITMAP_TYPE_TIF" 	#11 
-								,"BITMAP_TYPE_GIF" 	 #13
-								,"BITMAP_TYPE_PNG" 	 #15
-								,"BITMAP_TYPE_JPEG" #17
-								,"BITMAP_TYPE_PNM" #19
-								,"BITMAP_TYPE_PCX"	#21 
-								,"BITMAP_TYPE_PICT" #23
-								,"BITMAP_TYPE_ICON"	 #25
-								,"BITMAP_TYPE_ANI"	#27 
-								,"BITMAP_TYPE_IFF"	 #28
-								,"BITMAP_TYPE_TGA"	 #29
-								,"BITMAP_TYPE_MACCURSOR" #30 	 
-								])
+		self.filetype_list_box.AppendItems([
+				"BITMAP_TYPE_BMP",  # 1
+				"BITMAP_TYPE_ICO",  # 3
+				"BITMAP_TYPE_CUR",  # 5
+				"BITMAP_TYPE_XBM",  # 7
+				"BITMAP_TYPE_XBM_DATA",  # 8
+				"wx.BITMAP_TYPE_XPM",  # 9
+				"wx.BITMAP_TYPE_XPM_DATA",  # 10
+				"BITMAP_TYPE_TIFF",  # 11
+				"BITMAP_TYPE_TIF",  # 11
+				"BITMAP_TYPE_GIF",  # 13
+				"BITMAP_TYPE_PNG",  # 15
+				"BITMAP_TYPE_JPEG",  # 17
+				"BITMAP_TYPE_PNM",  # 19
+				"BITMAP_TYPE_PCX",  # 21
+				"BITMAP_TYPE_PICT",  # 23
+				"BITMAP_TYPE_ICON",  # 25
+				"BITMAP_TYPE_ANI",  # 27
+				"BITMAP_TYPE_IFF",  # 28
+				"BITMAP_TYPE_TGA",  # 29
+				"BITMAP_TYPE_MACCURSOR",  # 30
+				])
+		
 		self.filetype_list_box.SetSelection(0)
 		self.update_preview()
-
+	
 	def __set_properties(self):
 		# begin wxGlade: BitmapSaverFrame.__set_properties
 		self.SetTitle("wxIconSaver")
 		# end wxGlade
 		_icon = wx.NullIcon
-		_icon.CopyFromBitmap(wx.ArtProvider.GetBitmap(wx.ART_FILE_SAVE,wx.ART_BUTTON,wx.Size(64,64)))
+		_icon.CopyFromBitmap(wx.ArtProvider.GetBitmap(wx.ART_FILE_SAVE, wx.ART_BUTTON, wx.Size(64, 64)))
 		self.SetIcon(_icon)
+	
 	def __do_layout(self):
 		# begin wxGlade: BitmapSaverFrame.__do_layout
 		sizer_1 = wx.BoxSizer(wx.VERTICAL)
@@ -219,17 +232,15 @@ class BitmapSaverFrame(wx.Frame):
 		self.SetSizer(sizer_1)
 		self.Layout()
 		# end wxGlade
-		#sizer_5.AddStretchSpacer()
+		# sizer_5.AddStretchSpacer()
 		self.preview_bitmap = preview_bitmap
-
-	def on_close(self, event):  # wxGlade: BitmapSaverFrame.<event_handler>
+	
+	def on_close(self, _):  # wxGlade: BitmapSaverFrame.<event_handler>
 		self.Close()
-
-
+	
 	def on_save(self, event):  # wxGlade: BitmapSaverFrame.<event_handler>
 		self.update_preview(self, event)
-				
-							
+		
 		if self.filetype == 1:
 			extension = ".bmp"
 			filetype_string = "BMP"
@@ -242,15 +253,15 @@ class BitmapSaverFrame(wx.Frame):
 		elif self.filetype == 7:
 			extension = ".xbm"
 			filetype_string = "XBM"
-	#	elif self.filetype == 8:
-	#		extension = ".bmp"
-	#		filetype_string = "XBM DATA"
+		# elif self.filetype == 8:
+		# 		extension = ".bmp"
+		# 		filetype_string = "XBM DATA"
 		elif self.filetype == 9:
 			extension = ".xpm"
 			filetype_string = "XBM"
-	#	elif self.filetype == 10:
-	#		extension = ".xpm"
-	#		filetype_string = "XPM DATA"
+		# elif self.filetype == 10:
+		# 		extension = ".xpm"
+		# 		filetype_string = "XPM DATA"
 		elif self.filetype == 11:
 			extension = ".tiff"
 			filetype_string = "TIFF"
@@ -290,18 +301,14 @@ class BitmapSaverFrame(wx.Frame):
 		elif self.filetype == 30:
 			extension = ".*"
 			filetype_string = "Mac Cursor"
-			
-				
-								
-		
 		
 		# from https://wxpython.org/Phoenix/docs/html/wx.FileDialog.html
-		filedlg = wx.FileDialog(self, "Save {} file".format(filetype_string), wildcard="{} files (*{})|*{}".format(filetype_string,extension,extension),
-					   style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
-
+		filedlg = wx.FileDialog(self, "Save {} file".format(filetype_string),
+								wildcard="{} files (*{})|*{}".format(filetype_string, extension, extension),
+								style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+		
 		if filedlg.ShowModal() == wx.ID_CANCEL:
-			return     # the user changed their mind
-
+			return  # the user changed their mind
 		
 		# save the current contents in the file
 		self.filename = filedlg.GetPath()
@@ -309,18 +316,26 @@ class BitmapSaverFrame(wx.Frame):
 		if os.path.splitext(self.filename)[-1] != extension:
 			self.filename = self.filename + extension
 		
-		wx.ArtProvider.GetBitmap(self.icon, self.provider,wx.Size(self.size,self.size)).SaveFile(self.filename,self.filetype)
+		wx.ArtProvider.GetBitmap(
+				self.icon,
+				self.provider,
+				wx.Size(self.size, self.size),
+				).SaveFile(self.filename, self.filetype)
+		
 		filedlg.Destroy()
-
+		
 		event.Skip()
+	
+	def update_preview(self, *_):  # wxGlade: BitmapSaverFrame.<event_handler>
 		
-	def update_preview(self, *args):  # wxGlade: BitmapSaverFrame.<event_handler>
-		
-		
-
 		self.size = int(self.size_spin_ctrl.GetValue())
-		self.icon = bytes("wx" + self.icon_list_box.GetString(self.icon_list_box.GetSelection()),"utf-8")
-		self.provider = bytes("wx" + self.provider_list_box.GetString(self.provider_list_box.GetSelection()) + "_C","utf-8")
+		self.icon = bytes("wx" + self.icon_list_box.GetString(self.icon_list_box.GetSelection()), "utf-8")
+		self.provider = bytes(
+				"wx" + self.provider_list_box.GetString(
+						self.provider_list_box.GetSelection(),
+						) + "_C",
+				"utf-8",
+				)
 		
 		filetype_raw_index = self.filetype_list_box.GetSelection()
 		
@@ -364,12 +379,10 @@ class BitmapSaverFrame(wx.Frame):
 			self.filetype = 29
 		elif filetype_raw_index == 19:
 			self.filetype = 30
-
-		self.preview_bitmap.SetBitmap(wx.ArtProvider.GetBitmap(self.icon, self.provider,wx.Size(self.size,self.size)))
-
 		
+		self.preview_bitmap.SetBitmap(wx.ArtProvider.GetBitmap(self.icon, self.provider, wx.Size(self.size, self.size)))
 
-		
+
 # end of class BitmapSaverFrame
 
 class BitmapSaver(wx.App):
@@ -379,11 +392,13 @@ class BitmapSaver(wx.App):
 		self.frame.Show()
 		return True
 
+
 # end of class BitmapSaver
 
 def main():
 	app = BitmapSaver(0)
 	app.MainLoop()
+
 
 if __name__ == "__main__":
 	main()
