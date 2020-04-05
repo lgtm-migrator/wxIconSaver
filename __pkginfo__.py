@@ -66,5 +66,4 @@ else:
 
 data_files = [
 		('share/applications', ['wxIconSaver.desktop']),
-		('share/applications', ['wxIconSaver.png']),
 		]
