@@ -1,18 +1,53 @@
+# This file is managed by `git_helper`. Don't edit it directly
+
 language: python
 dist: xenial
+cache: pip
 python:
-- '3.6'
-- '3.7'
-- 3.8-dev
+  - '3.6'
+  - '3.7'
+  - '3.8'
+
+install:
+
+  - pip install pip  --upgrade
+  - pip install tox tox-travis
+
+
 script:
-- echo "skipping tests"
-deploy:
-  provider: pypi
-  user: DomDF
-  on:
-    tags: true
-    python: '3.6'
-  distributions: sdist bdist_wheel
-  skip_existing: true
-  password:
-    secure: aWcUbFth7ofwRoPgMQicO3FxpPZL/KnXEgrkvsrY1hk444losKlYAd23FlXDSd9hyccQ+pr71TYkq2mXQwnXL25IQupPtfQfp1ebFx6d6jUp7OgzbJbTYZXCVOcnmg5AjIoeryYmmWJiZBvnSwWZGPBLt9NG/bBPoCULcDaJpbi3FHpWKnlK78t7b9ce0B6ppLeDupKwZEMF3JktiA5p1HUBYtJtFtM5iK0FBzBoPfFSRq8wAijZkSgEwMp4v6N7cBXawbRiMgHh/kOuAy5PND/bvPsSJfKa7JQyN3NMJOTN9789vXCZKDBOlQatTj+8gJKfWzGtqH7vmogJvkrRZQtRzajxVa3gfkMe5/jAV5sKEcyckvtnW0ddV4NurkQtCNufX++5/Xw+PhFIFJYiGwEy477Tu3EkoCnOmusogUSkHw1KiewavURdPdph5AfcD0xUo2ZUOLgqUKESrPgfgVbCmJkA6GLM6QaFTqxibVHUq7tqXn4sz8RjDW62QvxkEyF1D1Uk5OunWfOpf3T8gYlgA6uGwQd/jQsXHAIEj6KU9BOWHHA7dGt+WNSe99ZsHKmWpLkk8RBorUJbf9Ysi09cm4zCee+xStAgBvpBa3Gi6VBOuQvnC8z3+Fjdnztx/feGxQ0yXKmJJCz2963qN+7AOxpbuxYQmRbYHEAXMes=
+  - tox
+
+
+stages:
+  - test
+  - deploy_pypi
+
+  - deploy_releases
+
+jobs:
+  include:
+    - stage: deploy_pypi
+      python: "3.6"
+      script: skip
+      deploy:
+        on:
+          tags: true
+          repo: domdfcoding/wxIconSaver
+        provider: pypi
+        user: "DomDF"
+        password:
+          secure: aWcUbFth7ofwRoPgMQicO3FxpPZL/KnXEgrkvsrY1hk444losKlYAd23FlXDSd9hyccQ+pr71TYkq2mXQwnXL25IQupPtfQfp1ebFx6d6jUp7OgzbJbTYZXCVOcnmg5AjIoeryYmmWJiZBvnSwWZGPBLt9NG/bBPoCULcDaJpbi3FHpWKnlK78t7b9ce0B6ppLeDupKwZEMF3JktiA5p1HUBYtJtFtM5iK0FBzBoPfFSRq8wAijZkSgEwMp4v6N7cBXawbRiMgHh/kOuAy5PND/bvPsSJfKa7JQyN3NMJOTN9789vXCZKDBOlQatTj+8gJKfWzGtqH7vmogJvkrRZQtRzajxVa3gfkMe5/jAV5sKEcyckvtnW0ddV4NurkQtCNufX++5/Xw+PhFIFJYiGwEy477Tu3EkoCnOmusogUSkHw1KiewavURdPdph5AfcD0xUo2ZUOLgqUKESrPgfgVbCmJkA6GLM6QaFTqxibVHUq7tqXn4sz8RjDW62QvxkEyF1D1Uk5OunWfOpf3T8gYlgA6uGwQd/jQsXHAIEj6KU9BOWHHA7dGt+WNSe99ZsHKmWpLkk8RBorUJbf9Ysi09cm4zCee+xStAgBvpBa3Gi6VBOuQvnC8z3+Fjdnztx/feGxQ0yXKmJJCz2963qN+7AOxpbuxYQmRbYHEAXMes=
+        distributions: "sdist bdist_wheel"
+        skip_existing: true
+
+
+    - stage: deploy_releases
+      python: "3.6"
+      install:
+        - pip install PyGithub requests
+      script: skip
+      deploy:
+        on:
+          repo: domdfcoding/wxIconSaver
+        provider: script
+        script: python .ci/copy_pypi_2_github.py || return 1;
