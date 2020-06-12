@@ -1,5 +1,5 @@
 modname: "wxIconSaver"
-copyright_years: "2020"
+copyright_years: "2019-2020"
 author: "Dominic Davis-Foster"
 email: "dominic@davis-foster.co.uk"
 version: "0.1.7"
@@ -12,6 +12,11 @@ enable_conda: False
 
 python_deploy_version: "3.6"
 
+python_versions:
+  - 3.6
+  - 3.7
+  - 3.8
+
 classifiers:
   - 'Development Status :: 3 - Alpha'
   - 'Development Status :: 4 - Beta'
@@ -23,3 +28,7 @@ classifiers:
   - 'Topic :: Utilities'
 
 # TODO: add tag for GUI
+
+console_scripts:
+  - 'wxIconSaver=wxIconSaver:main'
+  - 'wxiconsaver=wxIconSaver:main'
