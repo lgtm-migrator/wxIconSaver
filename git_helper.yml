@@ -1,0 +1,25 @@
+modname: "wxIconSaver"
+copyright_years: "2020"
+author: "Dominic Davis-Foster"
+email: "dominic@davis-foster.co.uk"
+version: "0.1.7"
+username: "domdfcoding"
+license: 'GPLv3+'
+short_desc: 'wxPython GUI for saving icons to files.'
+
+enable_tests: False
+enable_conda: False
+
+python_deploy_version: "3.6"
+
+classifiers:
+  - 'Development Status :: 3 - Alpha'
+  - 'Development Status :: 4 - Beta'
+#  - "Development Status :: 5 - Production/Stable"
+#  - "Development Status :: 6 - Mature"
+#  - "Development Status :: 7 - Inactive"
+  - 'Intended Audience :: Developers'
+  - 'Operating System :: OS Independent'
+  - 'Topic :: Utilities'
+
+# TODO: add tag for GUI
