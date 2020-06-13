@@ -93,7 +93,7 @@ Installation
 
 		.. prompt:: bash
 
-			pip install git+https://github.com//wxIconSaver@master
+			pip install git+https://github.com/domdfcoding/wxIconSaver@master
 
 .. end installation
 
