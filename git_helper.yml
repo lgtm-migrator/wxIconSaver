@@ -17,6 +17,9 @@ python_versions:
   - 3.7
   - 3.8
 
+additional_ignore:
+  - wxIconSaver.desktop
+
 classifiers:
   - 'Development Status :: 3 - Alpha'
   - 'Development Status :: 4 - Beta'
@@ -34,3 +37,21 @@ console_scripts:
   - 'wxiconsaver=wxIconSaver:main'
 
 travis_pypi_secure: "aWcUbFth7ofwRoPgMQicO3FxpPZL/KnXEgrkvsrY1hk444losKlYAd23FlXDSd9hyccQ+pr71TYkq2mXQwnXL25IQupPtfQfp1ebFx6d6jUp7OgzbJbTYZXCVOcnmg5AjIoeryYmmWJiZBvnSwWZGPBLt9NG/bBPoCULcDaJpbi3FHpWKnlK78t7b9ce0B6ppLeDupKwZEMF3JktiA5p1HUBYtJtFtM5iK0FBzBoPfFSRq8wAijZkSgEwMp4v6N7cBXawbRiMgHh/kOuAy5PND/bvPsSJfKa7JQyN3NMJOTN9789vXCZKDBOlQatTj+8gJKfWzGtqH7vmogJvkrRZQtRzajxVa3gfkMe5/jAV5sKEcyckvtnW0ddV4NurkQtCNufX++5/Xw+PhFIFJYiGwEy477Tu3EkoCnOmusogUSkHw1KiewavURdPdph5AfcD0xUo2ZUOLgqUKESrPgfgVbCmJkA6GLM6QaFTqxibVHUq7tqXn4sz8RjDW62QvxkEyF1D1Uk5OunWfOpf3T8gYlgA6uGwQd/jQsXHAIEj6KU9BOWHHA7dGt+WNSe99ZsHKmWpLkk8RBorUJbf9Ysi09cm4zCee+xStAgBvpBa3Gi6VBOuQvnC8z3+Fjdnztx/feGxQ0yXKmJJCz2963qN+7AOxpbuxYQmRbYHEAXMes="
+
+setup_pre:
+  # Create .desktop file
+  - "data_files = [('share/applications', ['wxIconSaver.desktop'])]"
+  - "with open('wxIconSaver.desktop', 'w') as desktop:"
+  - "\tdesktop.write(f'''[Desktop Entry]"
+  - "Version={__version__}"
+  - "Name={modname}"
+  - "Comment=A GUI utility for saving wxPython icons to files"
+  - "Exec=wxIconSaver"
+  - "Icon=document-save"
+  - "Terminal=false"
+  - "Type=Application"
+  - "Categories=Utility;Application;"
+  - "''')"
+
+additional_setup_args:
+  data_files: data_files

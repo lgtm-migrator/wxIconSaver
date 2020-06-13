@@ -8,6 +8,19 @@ from setuptools import find_packages, setup
 # this package
 from __pkginfo__ import *  # pylint: disable=wildcard-import
 
+data_files = [('share/applications', ['wxIconSaver.desktop'])]
+with open('wxIconSaver.desktop', 'w') as desktop:
+	desktop.write(f'''[Desktop Entry]
+Version={__version__}
+Name={modname}
+Comment=A GUI utility for saving wxPython icons to files
+Exec=wxIconSaver
+Icon=document-save
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+''')
+
 setup(
 		author=author,
 		author_email=author_email,
@@ -28,5 +41,5 @@ setup(
 		version=__version__,
 		keywords=keywords,
 		zip_safe=False,
-
+		data_files=data_files,
 		)

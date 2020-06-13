@@ -87,27 +87,8 @@ classifiers = [
 		'Programming Language :: Python',
 		'Programming Language :: Python :: 3 :: Only',
 		'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+		'Typing :: Typed',
 
 		]
 
 keywords = ""
-
-
-data_files = [
-		('share/applications', ['wxIconSaver.desktop']),
-		]
-
-
-
-# Create .desktop file
-with open("wxIconSaver.desktop", "w") as desktop:
-	desktop.write(f"""[Desktop Entry]
-Version={__version__}
-Name={modname}
-Comment=A GUI utility for saving wxPython icons to files
-Exec=wxIconSaver
-Icon=document-save
-Terminal=false
-Type=Application
-Categories=Utility;Application;
-""")
