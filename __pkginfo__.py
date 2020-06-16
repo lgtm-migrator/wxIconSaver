@@ -91,4 +91,4 @@ classifiers = [
 
 		]
 
-keywords = ""
+keywords = "wxpython icons utility gui"

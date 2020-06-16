@@ -55,3 +55,9 @@ setup_pre:
 
 additional_setup_args:
   data_files: data_files
+
+keywords:
+  - wxpython
+  - icons
+  - utility
+  - gui
