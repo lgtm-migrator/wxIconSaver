@@ -30,7 +30,7 @@ wxIconSaver
 	:target: https://wxiconsaver.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
 	
-.. |docs| image:: [Docs Check](https://github.com/domdfcoding/wxIconSaver/workflows/Docs%20Check/badge.svg
+.. |docs_check| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
