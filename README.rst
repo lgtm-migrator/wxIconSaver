@@ -18,8 +18,7 @@ wxIconSaver
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos|
-	    |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -42,7 +41,7 @@ wxIconSaver
 .. |actions_windows| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Windows%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Windows+Tests%22
 	:alt: Windows Tests Status
-	
+
 .. |actions_macos| image:: https://github.com/domdfcoding/wxIconSaver/workflows/macOS%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22macOS+Tests%22
 	:alt: macOS Tests Status
