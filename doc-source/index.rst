@@ -15,7 +15,7 @@ wxIconSaver
 	:widths: 10 90
 
 	* - Docs
-	  - |docs|
+	  - |docs| |docs_check|
 	* - Tests
 	  - |travis| |actions_windows| |actions_macos|
 	    |codefactor|
@@ -29,6 +29,10 @@ wxIconSaver
 .. |docs| image:: https://img.shields.io/readthedocs/wxiconsaver/latest?logo=read-the-docs
 	:target: https://wxiconsaver.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
+	
+.. |docs| image:: [Docs Check](https://github.com/domdfcoding/wxIconSaver/workflows/Docs%20Check/badge.svg
+	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Docs+Check%22
+	:alt: Docs Check Status
 
 .. |travis| image:: https://img.shields.io/travis/com/domdfcoding/wxIconSaver/master?logo=travis
 	:target: https://travis-ci.com/domdfcoding/wxIconSaver
