@@ -8,7 +8,7 @@ wxIconSaver
 
 .. end short_desc
 
-.. start shields 
+.. start shields
 
 .. list-table::
 	:stub-columns: 1
@@ -28,7 +28,7 @@ wxIconSaver
 .. |docs| image:: https://img.shields.io/readthedocs/wxiconsaver/latest?logo=read-the-docs
 	:target: https://wxiconsaver.readthedocs.io/en/latest/?badge=latest
 	:alt: Documentation Status
-	
+
 .. |docs_check| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
@@ -57,7 +57,7 @@ wxIconSaver
 	:target: https://pypi.org/project/wxIconSaver/
 	:alt: PyPI - Package Version
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/wxIconSaver
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/wxIconSaver?logo=python&logoColor=white
 	:target: https://pypi.org/project/wxIconSaver/
 	:alt: PyPI - Supported Python Versions
 
@@ -70,8 +70,8 @@ wxIconSaver
 	:alt: PyPI - Wheel
 
 .. |license| image:: https://img.shields.io/github/license/domdfcoding/wxIconSaver
-	:alt: License
 	:target: https://github.com/domdfcoding/wxIconSaver/blob/master/LICENSE
+	:alt: License
 
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/wxIconSaver
 	:alt: GitHub top language
@@ -100,14 +100,14 @@ Installation
 
 		.. prompt:: bash
 
-			pip install wxIconSaver
+			python3 -m pip install wxIconSaver --user
 
 
 	.. tab:: from GitHub
 
 		.. prompt:: bash
 
-			pip install git+https://github.com/domdfcoding/wxIconSaver@master
+			python3 -m pip install git+https://github.com/domdfcoding/wxIconSaver@master --user
 
 .. end installation
 
