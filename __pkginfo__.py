@@ -50,7 +50,7 @@ pypi_name = "wxIconSaver"
 import_name = "wxIconSaver"
 py_modules = []
 entry_points = {
-		"console_scripts": ['wxIconSaver=wxIconSaver:main', 'wxiconsaver=wxIconSaver:main']
+		"console_scripts": ['wxIconSaver=wxIconSaver:main', 'wxiconsaver=wxIconSaver:main'],
 		}
 
 __license__ = "GNU General Public License v3 or later (GPLv3+)"
