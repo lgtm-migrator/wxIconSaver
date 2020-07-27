@@ -2,5 +2,5 @@ include __pkginfo__.py
 include LICENSE
 include requirements.txt
 recursive-exclude **/__pycache__ *
-recursive-include wxIconSaver/ *.pyi
+recursive-include wxIconSaver *.pyi
 include wxIconSaver/py.typed
