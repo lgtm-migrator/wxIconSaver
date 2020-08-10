@@ -26,7 +26,7 @@ Categories=Utility;Application;
 ''')
 
 setup(
-		description="wxPython GUI for saving icons to files.",
+		description='wxPython GUI for saving icons to files.',
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],

@@ -44,9 +44,9 @@ modname = "wxIconSaver"
 pypi_name = "wxIconSaver"
 import_name = "wxIconSaver"
 __license__ = "GNU General Public License v3 or later (GPLv3+)"
-short_desc = "wxPython GUI for saving icons to files."
-__author__ = author = "Dominic Davis-Foster"
-author_email = "dominic@davis-foster.co.uk"
+short_desc = 'wxPython GUI for saving icons to files.'
+__author__ = author = 'Dominic Davis-Foster'
+author_email = 'dominic@davis-foster.co.uk'
 github_username = "domdfcoding"
 web = github_url = "https://github.com/domdfcoding/wxIconSaver"
 repo_root = pathlib.Path(__file__).parent
