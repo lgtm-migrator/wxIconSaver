@@ -18,7 +18,7 @@ wxIconSaver
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -28,7 +28,7 @@ wxIconSaver
 
 .. |docs| image:: https://img.shields.io/readthedocs/wxiconsaver/latest?logo=read-the-docs
 	:target: https://wxiconsaver.readthedocs.io/en/latest/?badge=latest
-	:alt: Documentation Status
+	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Docs+Check%22
@@ -91,6 +91,10 @@ wxIconSaver
 .. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/wxIconSaver/master.svg
+	:target: https://results.pre-commit.ci/latest/github/domdfcoding/wxIconSaver/master
+	:alt: pre-commit.ci status
 
 .. end shields
 

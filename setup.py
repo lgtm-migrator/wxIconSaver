@@ -14,7 +14,8 @@ from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 data_files = [('share/applications', ['wxIconSaver.desktop'])]
 with open('wxIconSaver.desktop', 'w') as desktop:
-	desktop.write(f'''[Desktop Entry]
+	desktop.write(
+			f'''[Desktop Entry]
 Version={__version__}
 Name={modname}
 Comment=A GUI utility for saving wxPython icons to files
@@ -23,13 +24,14 @@ Icon=document-save
 Terminal=false
 Type=Application
 Categories=Utility;Application;
-''')
+'''
+			)
 
 setup(
+		data_files=data_files,
 		description='wxPython GUI for saving icons to files.',
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],
 		version=__version__,
-		data_files=data_files,
 		)
