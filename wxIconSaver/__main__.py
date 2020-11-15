@@ -31,11 +31,13 @@ import wx  # type: ignore
 # this package
 from wxIconSaver import BitmapSaverFrame
 
+__all__ = ["BitmapSaver", "main"]
+
 
 class BitmapSaver(wx.App):
 
 	def OnInit(self):
-		self.frame = BitmapSaverFrame(None, wx.ID_ANY, "")
+		self.frame = BitmapSaverFrame(None, wx.ID_ANY, '')
 		self.SetTopWindow(self.frame)
 		self.frame.Show()
 		return True

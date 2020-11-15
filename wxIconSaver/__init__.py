@@ -39,6 +39,8 @@ import os
 # 3rd party
 import wx  # type: ignore
 
+__all__ = ["FileTypesEnum", "BitmapSaverFrame"]
+
 # begin wxGlade: dependencies
 # end wxGlade
 
@@ -173,7 +175,7 @@ class BitmapSaverFrame(wx.Frame):
 			self,
 			parent,
 			id: wxWindowID = wx.ID_ANY,
-			title: str = "",
+			title: str = '',
 			pos: wx.Point = wx.DefaultPosition,
 			size: wx.Size = wx.DefaultSize,
 			style: str = wx.DEFAULT_FRAME_STYLE,
@@ -198,9 +200,9 @@ class BitmapSaverFrame(wx.Frame):
 		self.SetMaxSize((467, 577))
 		self.SetSize((467, 577))
 		self.size_spin_ctrl = wx.SpinCtrl(self, wx.ID_ANY, "16", min=1, max=512)
-		self.icon_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
-		self.provider_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
-		self.filetype_list_box = wx.ListBox(self, wx.ID_ANY, choices=[""])
+		self.icon_list_box = wx.ListBox(self, wx.ID_ANY, choices=[''])
+		self.provider_list_box = wx.ListBox(self, wx.ID_ANY, choices=[''])
+		self.filetype_list_box = wx.ListBox(self, wx.ID_ANY, choices=[''])
 		self.close_button = wx.Button(self, wx.ID_ANY, "Close")
 		self.save_button = wx.Button(self, wx.ID_ANY, "Save")
 
