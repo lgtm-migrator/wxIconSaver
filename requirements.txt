@@ -1,0 +1,2 @@
+wxpython>=4.0.7; platform_system == "Windows" and python_version < "3.9"
+wxpython>=4.0.7; platform_system == "Darwin" and python_version < "3.9"
