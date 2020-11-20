@@ -34,17 +34,17 @@ wxIconSaver
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://img.shields.io/travis/com/domdfcoding/wxIconSaver/master?logo=travis
-	:target: https://travis-ci.com/domdfcoding/wxIconSaver
-	:alt: Travis Build Status
+.. |travis| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Linux%20Tests/badge.svg
+	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%Linux+Tests%22
+	:alt: Linux Test Status
 
 .. |actions_windows| image:: https://github.com/domdfcoding/wxIconSaver/workflows/Windows%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22Windows+Tests%22
-	:alt: Windows Tests Status
+	:alt: Windows Test Status
 
 .. |actions_macos| image:: https://github.com/domdfcoding/wxIconSaver/workflows/macOS%20Tests/badge.svg
 	:target: https://github.com/domdfcoding/wxIconSaver/actions?query=workflow%3A%22macOS+Tests%22
-	:alt: macOS Tests Status
+	:alt: macOS Test Status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/wxIconSaver/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/wxIconSaver/requirements/?branch=master
