@@ -15,7 +15,7 @@ from textwrap import dedent
 # this package
 from __pkginfo__ import *  # pylint: disable=wildcard-import
 
-with open('wxIconSaver.desktop', 'w') as desktop:
+with open("wxIconSaver.desktop", 'w') as desktop:
 	desktop.write(
 			dedent(
 					f"""\
@@ -33,8 +33,8 @@ Categories=Utility;Application;
 			)
 
 setup(
-		data_files=[('share/applications', ['wxIconSaver.desktop'])],
-		description='wxPython GUI for saving icons to files.',
+		data_files=[("share/applications", ["wxIconSaver.desktop"])],
+		description="wxPython GUI for saving icons to files.",
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],
