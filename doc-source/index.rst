@@ -121,9 +121,9 @@ Installation
 	:maxdepth: 3
 	:caption: Documentation
 
-	API Reference<docs>
+	usage
+	contributing
 	Source
-	Building
 
 .. start links
 
