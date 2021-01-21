@@ -46,6 +46,7 @@ extensions = [
 		"sphinxcontrib.default_values",
 		"sphinxcontrib.toctree_plus",
 		"seed_intersphinx_mapping",
+		"enum_tools.autoenum",
 		]
 
 sphinxemoji_style = "twemoji"
@@ -55,8 +56,6 @@ gitstamp_fmt = "%d %b %Y"
 templates_path = ["_templates"]
 html_static_path = ["_static"]
 source_suffix = ".rst"
-exclude_patterns = []
-
 master_doc = "index"
 suppress_warnings = ["image.nonlocal_uri"]
 pygments_style = "default"
@@ -64,6 +63,7 @@ pygments_style = "default"
 intersphinx_mapping = {
 		"python": ("https://docs.python.org/3/", None),
 		"sphinx": ("https://www.sphinx-doc.org/en/stable/", None),
+		"wxpython": ("https://docs.wxpython.org/", None),
 		}
 
 html_theme = "furo"
