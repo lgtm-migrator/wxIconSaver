@@ -11,11 +11,10 @@ from setuptools import setup
 
 sys.path.append('.')
 
+extras_require = {}
+
 # stdlib
 from textwrap import dedent
-
-# this package
-from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 with open("wxIconSaver.desktop", 'w', encoding="UTF-8") as desktop:
 	desktop.write(
@@ -42,8 +41,8 @@ setup(
 		description="wxPython GUI for saving icons to files.",
 		extras_require=extras_require,
 		install_requires=install_requires,
+		name="wxiconsaver",
 		py_modules=[],
-		version=__version__,
 		)
 
 shutil.rmtree("wxIconSaver.egg-info", ignore_errors=True)

@@ -5,6 +5,7 @@ wxIconSaver
 .. start short_desc
 
 .. documentation-summary::
+	:meta:
 
 .. end short_desc
 
@@ -57,7 +58,8 @@ wxIconSaver
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/wxIconSaver/badge.svg
+		:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/wxIconSaver/
 		:alt: Requirements Status
 
 	.. |codefactor| codefactor-shield::
@@ -99,7 +101,7 @@ wxIconSaver
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
@@ -136,6 +138,12 @@ Installation
 	api
 	contributing
 	Source
+
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: wxIconSaver
+
 
 .. start links
 
